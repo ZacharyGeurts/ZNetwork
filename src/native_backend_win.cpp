@@ -2,6 +2,8 @@
 
 #include "znetwork/platform.hpp"
 
+#include <sstream>
+
 #if defined(ZNETWORK_WIN)
 
 namespace znet {

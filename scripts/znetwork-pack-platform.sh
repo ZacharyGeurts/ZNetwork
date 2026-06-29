@@ -88,7 +88,7 @@ main() {
   cp "$PLAT_JSON" "$STAGE/" 2>/dev/null || true
   cp "$ROOT/data/znetwork-version.json" "$STAGE/" 2>/dev/null || true
 
-  python3 - "$PLAT_JSON" <<'PY' | while IFS=$'\t' read -r id prefix build mode; do
+  python3 - "$PLAT_JSON" <<'PY' | while IFS='|' read -r id prefix build mode; do
 import json, sys
 data = json.loads(open(sys.argv[1]).read())
 for p in data.get("platforms", []):
@@ -101,7 +101,7 @@ for p in data.get("platforms", []):
     if pid == "win32-aarch64":
         prefix = "aarch64-w64-mingw32-" if not prefix else prefix
         mode = "build"
-    print(f"{pid}\t{prefix}\t{build}\t{mode}")
+    print(f"{pid}|{prefix}|{build}|{mode}")
 PY
     [[ -n "$id" ]] && pack_one "$id" "$prefix" "$build" "$mode"
   done
