@@ -3,9 +3,11 @@
 ![Release](https://img.shields.io/badge/release-2.1.0-green)
 ![Stack](https://img.shields.io/badge/canonical-NewLatest-blue)
 ![Grok16](https://img.shields.io/badge/Grok16-5.0.1-gold)
-![AmmoOS](https://img.shields.io/badge/AmmoOS-1.9.9h-purple)
+![AmmoOS](https://img.shields.io/badge/AmmoOS-2.0.0--beta3-purple)
 
-**ZNetwork** is the smart relayer — sole internet in/out for the AmmoOS field stack. Canonical home: **NewLatest/ZNetwork** only.
+**ZNetwork** is the smart relayer — sole internet in/out for the AmmoOS field stack.
+
+**Stack nav:** [AmmoOS STACK-NAV](https://github.com/ZacharyGeurts/AmmoOS/blob/main/STACK-NAV.md) · [Profile hub](https://zacharygeurts.github.io/ZacharyGeurts/stack.html) · [Queen](https://github.com/ZacharyGeurts/Queen) · [KILROY](https://github.com/ZacharyGeurts/KILROY)
 
 ## Stack layer
 
