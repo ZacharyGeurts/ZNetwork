@@ -39,3 +39,22 @@ C++ `mode.cpp`: without `ZNETWORK_LAB_GATE_OK=1`, SHADOW requests downgrade to R
 - `NewLatest/znetwork/OUTSIDE_LAB.json` — pointer only
 - `NewLatest/lib/znetwork-field.sh` — resolves `NewLatest/ZNetwork` first
 - `Grok16/data/grok16-znetwork-field-wire-doctrine.json` — `field_stream_mode.status`: `lab_locked_not_ready`
+
+## ZNetwork vs Old Networks
+
+**Old** = OS-native stack + browser-direct WAN + legacy FieldNet / underhook / duplicate trees.  
+**ZNetwork 2.1.0 Stack** = relayer owns policy, loopback sovereignty, lab-gated modes, field DNS/DHCP, future field-wire envelopes.
+
+| Dimension | Old Networks | ZNetwork 2.1.0 Stack |
+|-----------|--------------|----------------------|
+| **Canonical tree** | Scattered (`SG/ZNetwork`, underhook, FieldNet) | `NewLatest/ZNetwork` only |
+| **Who owns internet** | Each app + browser | Relayer → target 100% pipe |
+| **Operator identity** | Host IP + browser tab | `127.0.0.1` when pipe live |
+| **DNS/DHCP** | OS resolver / NM | `field-dns` + `field-dhcp` on loopback |
+| **Security** | OS firewall (maybe) | Gatekeeper + exploit shield + truth gate |
+| **Packets** | Discrete per socket | Today: relayer passthrough; future: field stream (lab locked) |
+| **Field wire** | FieldNet `.fld` parallel | `field-io-packet` + Grok16 convert/deconvert (design) |
+| **Modes** | Always on / always OS | REVIEW_ONLY → SHADOW → ACTIVE (lab battery + soak) |
+| **Coexistence** | N/A | `never_harm_os` — NM kept, policy owned inside |
+
+Full diagram: [`docs/network-comparison.html`](docs/network-comparison.html) (GitHub Pages).
